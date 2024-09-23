@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    background-color: #1c2833; /* Dark blue-grey background */
+    background-image: radial-gradient(circle, #1c2833, #273746, #34495e), /* Darker gradient */
+                      url('https://www.transparenttextures.com/patterns/cubes.png'); /* Subtle cube pattern */
+    background-size: cover, 40px 40px; /* Cover the entire page and overlay pattern */
+    background-blend-mode: overlay; /* Blend the pattern with gradient */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: red; */
+}
+
+/* Form Container */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for form background */
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker shadow for contrast */
+    padding: 30px;
+    width: 85%;
+    max-width: 600px;
+    margin: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Form Title */
+h1 {
+    text-align: center;
+    color: #17202a; /* Dark blue-grey for the text */
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Flexbox Layout for Form */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Form Group Styles */
+.form-group {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 220px;
+}
+
+/* Form Labels */
+label {
+    font-size: 13px;
+    color: #555555; /* Lighter grey for labels */
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Fields and Selects */
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    background-color: #f3f3f3; /* Light grey for input fields */
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+    border-color: #00a8ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 168, 255, 0.5);
+    transform: scale(1.02);
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #00a8ff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 168, 255, 0.2);
+}
+
+button[type="submit"]:hover {
+    background-color: #007acc;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 168, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form-group {
+        flex: 1 1 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 10px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 16px;
+    }
+}

@@ -1,0 +1,58 @@
+<?php
+
+header('Content-Type: text/html; charset=utf-8');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    class Main{
+        function execute(){
+            // Retrieve all form data
+            $age = $_POST['age'];
+            // $gender = $_POST['gender'] == 'male' ? 1 : 0; // Convert gender to 1 for male, 0 for female
+            $gender = $_POST['gender']; // Convert gender to 1 for male, 0 for female
+            $chest_pain_type = $_POST['chest_pain']; // Assuming dropdown values are 0, 1, 2, 3
+            $resting_blood_pressure = $_POST['blood_pressure'];
+            $cholesterol = $_POST['cholesterol'];
+            // $fasting_blood_sugar = $_POST['fasting_blood_sugar'] == 'yes' ? 1 : 0; // Convert to binary
+            $fasting_blood_sugar = $_POST['fasting_blood_sugar']; // Convert to binary
+            $restecg = $_POST['resting_ecg']; // Values: 0, 1, 2
+            $max_heart_rate = $_POST['max_heart_rate'];
+            // $exercise_induced_angina = $_POST['exercise_induced_angina'] == 'yes' ? 1 : 0; // Convert to binary
+            $exercise_induced_angina = $_POST['exercise_angina']; // Convert to binary
+            $oldpeak = $_POST['oldpeak'];
+            $slope = $_POST['slope'];
+            $num_major_vessels = $_POST['major_vessels'];
+            $thal = $_POST['thal'];
+
+            // Create a comma-separated string of symptoms
+            $symptoms = "$age,$gender,$chest_pain_type,$resting_blood_pressure,$cholesterol,$fasting_blood_sugar,$restecg,$max_heart_rate,$exercise_induced_angina,$oldpeak,$slope,$num_major_vessels,$thal";
+            
+            echo "AAABB";
+            echo $symptoms;
+            echo "AAABB";
+
+            // $symptoms = "58,0,0,100,248,0,0,122,0,1,1,0,2";
+            
+            chdir('C:/xampp/htdocs/project_main/model');
+            $symptoms_escaped = escapeshellarg($symptoms);
+            // $command = "C:/Python312/python.exe C:/xampp/htdocs/project_main/model/predict.py $symptoms_escaped";
+            $command = "C:/Python312/python.exe C:/xampp/htdocs/project_main/model/main.py $symptoms_escaped";
+            echo $command;
+            $output = shell_exec($command); 
+        }
+
+        function redirect(){
+            header('Location: http://localhost:8080/project_main/results.php');
+            exit; // Stop further script execution after redirect
+        }
+
+        function save_data(){
+            
+        }
+    }
+
+    $obj = new Main();
+    $obj->execute();
+    // $obj->save_data();
+    $obj->redirect();
+}
+?>

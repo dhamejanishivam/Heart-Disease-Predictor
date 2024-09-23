@@ -1,0 +1,218 @@
+/* Basic styling */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #0b1522;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+#hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+#hero:hover{
+    color: #ff5722;
+}
+
+#form-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    max-width: 600px; /* Increased width */
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#form-section h2 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+form input {
+    width: 80%;
+    text-align: left;
+    padding: 1rem; /* Increased size */
+    border: none;
+    border-bottom: 2px solid #ff5722;
+    background: transparent;
+    color: #fff;
+    margin-left: 2rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-bottom 0.3s ease, background-color 0.3s ease;
+}
+
+form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes big {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.16);
+    }
+}
+
+form input:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* transform: scale(1.1); */
+    animation: big 0.6s;
+    transform: scale(1.16);
+}
+
+form input:focus {
+    border-bottom-color: #e64a19;
+}
+
+form button {
+    background: #ff5722;
+    color: #fff;
+    padding: 0.8rem 1.7rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1.5rem;
+    margin-left: 3.6rem;
+    width: 80%;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+.heart {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 100px;
+    background: #f20044;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 25px 10px #f20044;
+    animation: heart 0.6s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #f20044;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50%;
+}
+
+.heart::after {
+    right: -50%;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(0.7) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1) rotate(-45deg);
+    }
+    100% {
+        transform: scale(0.7) rotate(-45deg);
+    }
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0;
+}
+
+footer .social-links li {
+    margin: 0 0.5rem;
+}
+
+footer .social-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
+
+@keyframes btnanimation {
+    from{
+
+    }
+    to{
+        background-color: white;
+        font-weight: bolder;
+        color: #ff5722;
+    }
+}
+
+#btn:hover{
+    /* color: red; */
+    border:100px;
+    animation: btnanimation 0.6s;
+    background-color: white;
+    font-weight: bolder;
+    color: #ff5722;
+}
+
+
+
+/* @keyframes headingani{
+    from{
+    }
+    to{
+        color: #ff5772;
+    }
+}
+
+#formheading:hover{
+    animation: headingani 1s;
+    color: #ff5772;
+} */
